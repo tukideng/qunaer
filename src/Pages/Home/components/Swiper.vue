@@ -6,7 +6,6 @@
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-    <img src="../../../assets/logo.png" alt="">
   </div>
 </template>
 
