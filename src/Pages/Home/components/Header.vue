@@ -25,8 +25,8 @@ export default {
     line-height: 50px
     color: #fff
     background-color: $bgcolor
-    .heade-left
-      float: right
+    .header-left
+      float: left
       width: 60px
       text-align: center
     .header-input
@@ -34,7 +34,7 @@ export default {
       height: 36px
       line-height: 36px
       margin-top: 7px
-      margin-left: 17px
+      margin-left: 7px
       padding-left: 12px
       color: #ccc
       background: #fff
