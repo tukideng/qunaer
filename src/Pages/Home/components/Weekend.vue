@@ -4,13 +4,13 @@
       周末去哪儿
     </div>
     <ul class="ul">
-      <li class="item" v-for="item of recommendList"  :key="item.id">
+      <li class="item" v-for="item of list"  :key="item.id">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl" class="item-img">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">{{item.desc}}</p>
+          <span class="item-desc">{{item.desc}}</span>
         </div>
       </li>
     </ul>
@@ -20,27 +20,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '1',
-          imgUrl: require('../../../assets/tu.jpg'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }, {
-          id: '2',
-          imgUrl: require('../../../assets/tu.jpg'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }, {
-          id: '3',
-          imgUrl: require('../../../assets/tu.jpg'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -49,7 +30,6 @@ export default {
 @import '~styles/mixins.styl'
 
   .title
-    margin-top: 20px
     line-height: 40px
     background: #eee
     text-indent: 10px

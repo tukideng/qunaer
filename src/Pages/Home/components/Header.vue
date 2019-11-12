@@ -7,19 +7,25 @@
       输入城市/主题/景点
     </div>
     <div class="header-right">
-      <router-link to="/city"> 城市</router-link>
+        <router-link to="/city">{{this.city}}</router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    city: String
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~styles/var.styl'
+  a {
+    color: inherit
+  }
   .header
     display: flex
     line-height: 50px
@@ -42,7 +48,6 @@ export default {
       font-size: 14px
     .header-right
       float: right
-      color: #fff
       width: 60px
       text-align: center
 </style>

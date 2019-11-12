@@ -4,7 +4,7 @@
       热销推荐
     </div>
     <ul class="ul">
-      <li class="item" v-for="item of recommendList"  :key="item.id">
+      <li class="item" v-for="item of list"  :key="item.id">
         <img :src="item.imgUrl" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -19,27 +19,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '1',
-          imgUrl: require('../../../assets/logo.png'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }, {
-          id: '2',
-          imgUrl: require('../../../assets/logo.png'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }, {
-          id: '3',
-          imgUrl: require('../../../assets/logo.png'),
-          title: '海洋馆',
-          desc: '海洋馆海洋馆海洋馆海洋馆'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -48,7 +29,6 @@ export default {
 @import '~styles/mixins.styl'
 
   .title
-    margin-top: 20px
     line-height: 40px
     background: #eee
     text-indent: 10px
@@ -79,7 +59,8 @@ export default {
         .item-btn
           margin-top: 8px
           background: #ff9300
-          padding: 0 10px
-          border-radius: 6px
+          padding: 2px 10px
+          border-radius: 3px
           color: #fff
+          border: none
 </style>
