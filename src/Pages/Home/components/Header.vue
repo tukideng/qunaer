@@ -25,6 +25,7 @@ export default {
 @import '~styles/var.styl'
   a {
     color: inherit
+    text-decoration: none
   }
   .header
     display: flex
