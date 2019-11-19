@@ -3,7 +3,7 @@
     <div class="header-left">
       返回
     </div>
-    <div class="header-input">
+    <div class="header-input" type="input">
       输入城市/主题/景点
     </div>
     <div class="header-right">
