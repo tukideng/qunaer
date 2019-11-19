@@ -8,7 +8,10 @@
 <script>
 import CityHeader from './components/Header'
 import CitySearch from './components/Search'
+<<<<<<< HEAD
 
+=======
+>>>>>>> city-search
 export default {
   name: 'City',
   components: {
