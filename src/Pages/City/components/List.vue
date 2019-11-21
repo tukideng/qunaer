@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div class="area">
+      <div class="area" >
         <div class="title">热门城市</div>
         <div class="btn-list">
           <div class="btn-wrapper" v-for="item of hot"  :key="item.id">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="(item,key) of cities" :key="key">
+      <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
         <div class="title">{{key}}</div>
         <div class="item-list" v-for="innerItem in item"  :key="innerItem.id">
           <div class="item">{{innerItem.name}}</div>
@@ -38,10 +38,19 @@ export default {
   props: {
     hot: Array,
     cities: Object,
-    city: String
+    city: String,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const e = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(e)
+      }
+    }
   }
 }
 </script>
