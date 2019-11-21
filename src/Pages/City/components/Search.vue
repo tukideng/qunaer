@@ -1,9 +1,6 @@
 <template>
   <div class="search">
-<<<<<<< HEAD
-=======
     <input type="text" placeholder="输入拼音/汉字" class="search-input">
->>>>>>> city-search
   </div>
 </template>
 
@@ -15,8 +12,6 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/var.styl'
-<<<<<<< HEAD
-=======
   .search
     height: 36px
     background: $bgcolor
@@ -30,5 +25,4 @@ export default {
      border-radius: 3px
      border: none
      text-align: center
->>>>>>> city-search
 </style>
