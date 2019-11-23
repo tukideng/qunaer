@@ -7,7 +7,7 @@
       输入城市/主题/景点
     </div>
     <div class="header-right">
-        <router-link to="/city">{{this.city}}</router-link>
+        <router-link to="/city">{{city}}</router-link>
     </div>
   </div>
 </template>
@@ -15,8 +15,10 @@
 <script>
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
+  computed: {
+    city () {
+      return this.$store.state.city
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
         <div class="btn-list">
           <div class="btn-wrapper">
             <div class="btn">
-              {{this.city}}
+              {{localcity}}
             </div>
           </div>
         </div>
@@ -14,7 +14,7 @@
       <div class="area" >
         <div class="title">热门城市</div>
         <div class="btn-list">
-          <div class="btn-wrapper" v-for="item of hot"  :key="item.id">
+          <div class="btn-wrapper" v-for="item of hot"  :key="item.id" @click="changecity(item.name)">
             <div class="btn">
               {{item.name}}
             </div>
@@ -23,8 +23,8 @@
       </div>
       <div class="area" v-for="(item,key) of cities" :key="key" :ref="key">
         <div class="title">{{key}}</div>
-        <div class="item-list" v-for="innerItem in item"  :key="innerItem.id">
-          <div class="item">{{innerItem.name}}</div>
+        <div class="item-list" v-for="innerItem in item"  :key="innerItem.id" @click="changecity(innerItem.name)">
+          <div class="item" >{{innerItem.name}}</div>
         </div>
       </div>
     </div>
@@ -38,11 +38,21 @@ export default {
   props: {
     hot: Array,
     cities: Object,
-    city: String,
     letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  computed: {
+    localcity () {
+      return this.$store.state.city
+    }
+  },
+  methods: {
+    changecity (city) {
+      this.$store.commit('changecity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {
