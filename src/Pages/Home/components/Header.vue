@@ -51,6 +51,7 @@ export default {
       font-size: 14px
     .header-right
       float: right
-      width: 60px
+      min-width: 52px
+      padding: 0 5px
       text-align: center
 </style>
