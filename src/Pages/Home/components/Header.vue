@@ -7,18 +7,17 @@
       输入城市/主题/景点
     </div>
     <div class="header-right">
-        <router-link to="/city">{{city}}</router-link>
+        <router-link to="/city">{{this.city}}</router-link>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
   computed: {
-    city () {
-      return this.$store.state.city
-    }
+    ...mapState(['city'])
   }
 }
 </script>

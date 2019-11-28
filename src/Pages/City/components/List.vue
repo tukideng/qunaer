@@ -32,6 +32,7 @@
 </template>
 
 <script>
+// import { mapState, mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
@@ -47,12 +48,18 @@ export default {
     localcity () {
       return this.$store.state.city
     }
+    // ...mapState({
+    //   localcity: 'city'
+    // })
+    // 这时使用 this.localcity
   },
   methods: {
     changecity (city) {
       this.$store.commit('changecity', city)
       this.$router.push('/')
+      // this.changecity(city)
     }
+    // mapMutations(['changecity'])
   },
   watch: {
     letter () {
