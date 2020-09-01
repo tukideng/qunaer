@@ -4,14 +4,20 @@
       热销推荐
     </div>
     <ul class="ul">
-      <li class="item" v-for="item of list"  :key="item.id">
+      <router-link
+        tag="li"
+        class="item"
+        v-for="item of list"
+        :key="item.id"
+        :to="'/detail/' + item.id"
+      >
         <img :src="item.imgUrl" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
-          <span class="item-desc">{{item.desc}}</span>
+          <p class="item-desc">{{item.desc}}</p>
           <button class="item-btn">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -38,7 +44,7 @@ export default {
     .item
       overflow: hidden
       display: flex
-      height: 95px
+      height: 105px
       .item-img
         width: 85px
         height: 85px
@@ -49,11 +55,12 @@ export default {
         min-width: 0
         .item-title
           line-height: 27px
-          font-size: 16px
+          font-size: 18px
           margin: 5px
           ellipsis()
         .item-desc
           line-height: 20px
+          margin: 5px
           color: #ccc
           ellipsis()
         .item-btn
